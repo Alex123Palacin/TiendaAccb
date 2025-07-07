@@ -89,5 +89,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000"  # Puedes agregar otros si los usas
 ]
 
-# Si quieres que todo funcione en tu entorno local sin tanto problema durante desarrollo, también puedes poner:
+# Si quieres que XDtodo funcione en tu entorno local sin tanto problema durante desarrollo, tambien puedes poner
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1']
