@@ -1,13 +1,18 @@
 # Tus importaciones y BASE_DIR permanecen igual
+import os
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Mantenemos el SECRET_KEY y DEBUG en modo desarrollo
-SECRET_KEY = 'django-insecure-s56&dvb0c__+ab2nmlk(*2@9q!4mh8yyilw9d7_fxq*z&*9!ef'
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', default='sdfds66fs6d6f6ds6f6')
+DEBUG = 'RENDER' not in os.environ
 
 # En modo desarrollo, incluye en ALLOWED_HOSTS localhost y 127.0.0.1
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Resto de la configuración permanece igual
 INSTALLED_APPS = [
